@@ -1,0 +1,13 @@
+{
+  "name": "stubserver",
+  "version": "0.1.0",
+  "private": false,
+  "devDependencies": {},
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
