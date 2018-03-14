@@ -5,10 +5,10 @@ var app = express()
 
 app.use(bodyParser())
 
-port = 4004
+port = 8080
 
 // Add headers
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', '*')
 
@@ -29,7 +29,7 @@ app.use(function(req, res, next) {
   next()
 })
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   console.log('GET /')
   var html =
     '<html><body><form method="post" action="http://localhost:' +
@@ -40,7 +40,7 @@ app.get('/', function(req, res) {
   res.end(html)
 })
 
-app.post('/', function(req, res) {
+app.post('/', function (req, res) {
   console.log('POST /')
   console.dir(req.body)
   var json = fs.readFileSync('stub.json')
