@@ -32,9 +32,7 @@ app.use(function (req, res, next) {
 app.get('/', function (req, res) {
   console.log('GET /')
   var html =
-    '<html><body><form method="post" action="http://localhost:' +
-    port +
-    '">Name: <input type="text" name="name" /><input type="submit" value="Submit" /></form></body>'
+    '<html><body><form method="post" action="#">Name: <input type="text" name="name" /><input type="submit" value="Submit" /></form></body>'
   // var html = fs.readFileSync('index.html')
   res.writeHead(200, { 'Content-Type': 'text/html' })
   res.end(html)
