@@ -1,0 +1,54 @@
+{
+  "vacancies": [
+    {
+      "id": 0,
+      "title": "One",
+      "description": "Description about this job",
+      "educationLevel": ["grad"],
+      "discipline": ["art"],
+      "area": ["e"],
+      "tags": ["green", "red", "blue", "black"],
+      "url": "http://www.butdoesitfloat.com"
+    },
+    {
+      "id": 1,
+      "title": "Two",
+      "description": "Description about this job",
+      "educationLevel": ["msc"],
+      "discipline": ["ec"],
+      "area": ["North", "East", "South", "West"],
+      "tags": ["Red"],
+      "url": "http://www.butdoesitfloat.com"
+    },
+    {
+      "id": 2,
+      "title": "Three",
+      "description": "Description about this job",
+      "educationLevel": ["msc"],
+      "discipline": ["art"],
+      "area": ["e", "w"],
+      "tags": ["black"],
+      "url": "http://www.butdoesitfloat.com"
+    },
+    {
+      "id": 3,
+      "title": "Four",
+      "description": "Description about this job",
+      "educationLevel": ["ho"],
+      "discipline": ["humanities"],
+      "area": ["n", "s"],
+      "tags": ["green"],
+      "url": "http://www.butdoesitfloat.com"
+    },
+    {
+      "id": 4,
+      "title": "Five",
+      "description": "Description about this job",
+      "educationLevel": ["drop"],
+      "discipline": ["ma"],
+      "area": ["w"],
+      "tags": ["blue", "black"],
+      "url": "http://www.butdoesitfloat.com"
+    }
+  ]
+}
