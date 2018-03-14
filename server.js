@@ -5,7 +5,7 @@ var app = express()
 
 app.use(bodyParser())
 
-port = 8080
+port = 4004
 
 // Add headers
 app.use(function (req, res, next) {
@@ -48,5 +48,5 @@ app.post('/', function (req, res) {
   res.end(json)
 })
 
-app.listen(port)
+app.listen(process.env.PORT || port)
 console.log('Listening at http://localhost:' + port)
