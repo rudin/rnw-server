@@ -47,4 +47,4 @@ app.post('/', function (req, res) {
 })
 
 app.listen(process.env.PORT || port)
-console.log('Listening at http://localhost:' + port)
+console.log('Listening at' + (process.env.PORT || port))
