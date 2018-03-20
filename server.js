@@ -38,7 +38,9 @@ var doThis = function(req, res) {
     ? parseInt(req.query.queryLength, 10)
     : 9
   var vacancies = {
-    vacancies: preparedStub.slice(queryIndex, queryLength)
+    queryIndex: queryIndex,
+    queryLength: queryLength,
+    vacancies: preparedStub.slice(queryIndex, queryIndex + queryLength)
   }
   res.end(JSON.stringify(vacancies, null, 2))
 }
