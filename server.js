@@ -2,13 +2,14 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var fs = require('fs')
 var app = express()
+var generateVacancies = require('./vacancies')
 
 app.use(bodyParser())
 
 port = 4004
 
 // Add headers
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', '*')
 
@@ -29,22 +30,19 @@ app.use(function (req, res, next) {
   next()
 })
 
-app.get('/', function (req, res) {
-  console.log('GET /')
-  var html =
-    '<html><body><form method="post" action="#">Name: <input type="text" name="name" /><input type="submit" value="Submit" /></form></body>'
-  // var html = fs.readFileSync('index.html')
-  res.writeHead(200, { 'Content-Type': 'text/html' })
-  res.end(html)
-})
+var preparedStub = generateVacancies.generateVacancies(0, 100)
 
-app.post('/', function (req, res) {
-  console.log('POST /')
-  console.dir(req.body)
-  var json = fs.readFileSync('stub.json')
-  res.writeHead(200, { 'Content-Type': 'text/html' })
-  res.end(json)
-})
+var doThis = function(req, res) {
+  var queryIndex = req.query.queryIndex ? parseInt(req.query.queryIndex, 10) : 0
+  var queryLength = req.query.queryLength
+    ? parseInt(req.query.queryLength, 10)
+    : 9
+  var vacancies = preparedStub.slice(queryIndex, queryLength)
+  res.end(JSON.stringify(vacancies, null, 2))
+}
+
+app.get('/', doThis)
+app.post('/', doThis)
 
 app.listen(process.env.PORT || port)
 console.log('Listening at' + (process.env.PORT || port))
