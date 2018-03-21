@@ -13,7 +13,8 @@ module.exports = {
     return [...Array(queryLength)].map((vacancy, index) => ({
       id: queryIndex + index,
       title: faker.commerce.department(),
-      description: faker.company.catchPhrase(),
+      subtitle: faker.commerce.department(),
+      description: faker.lorem.paragraph(),
       educationLevel: shuffle(['grad', 'co', 'mba', 'msc', 'phd', 'ma']).slice(
         0,
         1 + Math.round(Math.random() * 1)
