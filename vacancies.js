@@ -15,11 +15,11 @@ module.exports = {
       title: faker.commerce.department(),
       subtitle: faker.commerce.department(),
       description: faker.lorem.paragraph(),
-      educationLevel: shuffle(['grad', 'co', 'mba', 'msc', 'phd', 'ma']).slice(
+      educationLevels: shuffle(['grad', 'co', 'mba', 'msc', 'phd', 'ma']).slice(
         0,
         1 + Math.round(Math.random() * 1)
       ),
-      discipline: shuffle([
+      disciplines: shuffle([
         'humanities',
         'social',
         'art',
@@ -27,7 +27,7 @@ module.exports = {
         'it',
         'ma'
       ]).slice(0, 1 + Math.round(Math.random() * 1)),
-      area: shuffle(['n', 'e', 's', 'w']).slice(
+      areas: shuffle(['n', 'e', 's', 'w']).slice(
         0,
         1 + Math.round(Math.random() * 3)
       ),
