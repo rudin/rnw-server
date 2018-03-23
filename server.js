@@ -34,13 +34,23 @@ var preparedStub = generateVacancies.generateVacancies(0, 100)
 
 var doThis = function(req, res) {
   var queryIndex = req.query.queryIndex ? parseInt(req.query.queryIndex, 10) : 0
+  var totalCount = req.query.totalCount
+    ? parseInt(req.query.totalCount, 10)
+    : 100
   var queryLength = req.query.queryLength
     ? parseInt(req.query.queryLength, 10)
     : 9
+  var itemsCount =
+    queryIndex + queryLength < totalCount
+      ? queryLength
+      : totalCount - queryIndex
+
   var vacancies = {
     queryIndex: queryIndex,
     queryLength: queryLength,
-    vacancies: preparedStub.slice(queryIndex, queryIndex + queryLength)
+    totalCount: 100,
+    itemsCount: itemsCount,
+    vacancies: preparedStub.slice(queryIndex, queryIndex + itemsCount)
   }
   res.end(JSON.stringify(vacancies, null, 2))
 }
