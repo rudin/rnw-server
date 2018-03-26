@@ -31,7 +31,6 @@ module.exports = {
         0,
         1 + Math.round(Math.random() * 3)
       ),
-      tags: shuffle(['green', 'red', 'blue', 'black']),
       url: 'http://www.butdoesitfloat.com'
     }))
   }
