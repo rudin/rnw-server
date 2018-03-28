@@ -14,7 +14,7 @@ module.exports = {
       id: queryIndex + index,
       title: faker.commerce.department(),
       subtitle: faker.commerce.department(),
-      description: faker.lorem.paragraph(),
+      shortDescription: faker.lorem.paragraph(),
       educationLevels: shuffle(['grad', 'co', 'mba', 'msc', 'phd', 'ma']).slice(
         0,
         1 + Math.round(Math.random() * 1)
